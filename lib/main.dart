@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.pink,
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
@@ -34,10 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
   Color randomColor() {
     return Color(Random().nextInt(0xffffffff));
   }
+  double screenSize(BuildContext context){
+    return MediaQuery.of(context).size.width;
+  }
+
   void _incrementCounter() {
     setState(() {
       _counter++;
-      if (_counter == 68){
+      if (_counter >= 68){
         _counter = 18;
       }
       texto = randomColor();
@@ -56,7 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Hello Worlds',
+              'Love is love',
               style: TextStyle(
                 fontSize: _counter,
                 color: texto
@@ -68,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
-        child: Icon(Icons.add),
+        child: Icon(Icons.aspect_ratio),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
